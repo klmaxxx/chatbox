@@ -1,7 +1,9 @@
 from flask import Flask, session, redirect, url_for
 
+chatbox_main = "chatbox/chatbox_main.html"
+
 def main_page():
-    pass
+    return chatbox_main
 
 app = Flask(__name__)
 
