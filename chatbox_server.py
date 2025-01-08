@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, redirect, url_for
 
-from chatbox_scripts import show_password1
+from chatbox_scripts import show_password1, main_page_html
 
 import codecs
 
@@ -28,18 +28,13 @@ app.config["SECRET_KEY"] = "14885269yateshakalitkurazebu"
 def main_page():
     return redirect(url_for("static", filename="chatbox_main.html"))
 
-
-def sign_up_page():
-    return redirect(url_for("static", filename="chatbox_signup.html"))
-
-
-
 # app.route("/")
 # app.route("/save_data", methods=["POST"])
 
 app.add_url_rule("/", "main_page", main_page)
-app.add_url_rule("/sign_up_page", "sign_up_page", sign_up_page)
 
 if __name__ == "__main__":
     app.run()
     # user_info()
+    if main_page():
+        
