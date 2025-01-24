@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='chatbox_signup.css')}}" />
+    <title>Sign up</title>
+  </head>
+  <body>
+    <form method="post" action="program">
+      <h1>Sign up</h1>
+
+      <p><input type="text" name="username1" placeholder="Create your username" /></p>
+
+      <p><input type="text" name="email1" placeholder="E-mail" /></p>
+
+      <p>
+        <input type="password" name="password1" placeholder="Password" />
+        <input type="radio" name="showpassword1" value="Show password" />
+      </p>
+
+      <p>
+        <input type="password" name="password1_confirm" placeholder="Confirm password" />
+        <input type="radio" name="showpassword2" value="Show password" />
+      </p>
+
+      <p><input type="submit" name="create_account1" value="Create account" /></p>
+      {%if submit%}
+      {{redirect(url_for('templates', filename='chatbox_main.html'))}}
+      {%endif%}
+    </form>
+  </body>
+</html>

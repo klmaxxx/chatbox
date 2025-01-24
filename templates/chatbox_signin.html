@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign in</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='chatbox_signup.css')}}" />
+  </head>
+
+  <body>
+    <form method="post" action="program">
+      <h1>Sign in</h1>
+
+      <p><input type="text" name="email2" placeholder="E-mail or username" /></p>
+
+      <p><input type="password" name="password2" placeholder="Password" /></p>
+
+      <p><input type="submit" name="Sign_in1" value="Sign in" /></p>
+      {%if submit%} {{redirect(url_for('templates', filename='chatbox_main.html'))}} {%endif%}
+    </form>
+  </body>
+</html>

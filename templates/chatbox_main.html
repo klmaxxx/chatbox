@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='chatbox_main.css')}}" />
+    <meta charset="UTF-8" />
+    <title>chatbox main page</title>
+  </head>
+
+  <body>
+    <h1>
+    <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> chatbox &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="{{return redirect(url_for('templates', filename='chatbox_signup.html'))}}">
+        Sign up</a
+      >&nbsp&nbsp&nbsp<a href="{{return redirect(url_for('templates', filename='chatbox_signin.html'))}}"> Sign in</a>
+    </h1>
+
+    <p>Hello! Welcome to <b>chatbox</b>.</p>
+
+    <p>
+      Here you can chat with your friends, make posts on your own page and of course, have some fun.
+    </p>
+
+    <p>Good luck!</p>
+  </body>
+</html>
