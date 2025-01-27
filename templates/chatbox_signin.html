@@ -7,13 +7,24 @@
 
   <body>
     <form method="post" action="program">
+      <script>
+        function toggle() {
+          var elements = document.getElementsByClassName("ppp");
+          for (var i = 0; i < elements.length; i++) {
+            elements[i].type = elements[i].type === "password" ? "text" : "password";
+          }
+        }
+      </script>
       <h1>Sign in</h1>
 
       <p><input type="text" name="email2" placeholder="E-mail or username" /></p>
 
-      <p><input type="password" name="password2" placeholder="Password" /></p>
+      <p><input type="password" name="password2" placeholder="Password" class="ppp" /></p>
 
-      <p><input type="checkbox" name="showpassword2" value="Show password" /> Show password</p>
+      <p>
+        <input type="checkbox" name="showpassword2" value="Show password" onclick="toggle()" /> Show
+        password
+      </p>
       <p><input type="submit" name="Sign_in1" value="Sign in" /></p>
       {%if submit%} {{url_for('main_page')}} {%endif%}
     </form>
