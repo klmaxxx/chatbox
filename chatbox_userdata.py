@@ -7,6 +7,6 @@ cursor = conn.cursor()
 #user info table(I hope it'll work)
 cursor.execute("CREATE TABLE IF NOT EXISTS user_info(username PRIMARY KEY, email VARCHAR, password VARCHAR)")
 
-def fill_info():
+def fill_info(username, email, password):
     cursor.execute("INSERT INTO user_info(username, email, password) VALUES (username1, email1, password1)")
     conn.commit()
