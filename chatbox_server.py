@@ -15,7 +15,8 @@ def user_info():
     if request.method == "POST":
         user_info = {"username": request.form.get("username1"), "password": request.form.get("password1"), "email": request.form.get("email1")}
         fill_info(user_info["username"], user_info["email"], user_info["password"])
-
+        return main_page()
+    
 def main_page():
     return render_template("chatbox_main.html")
 

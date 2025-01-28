@@ -19,13 +19,15 @@ a {
   color: black;
   text-decoration: none;
   text-align: right;
+  justify-content: right;
+  align-items: end;
 }
 
 p {
   font-size: 24 px;
   text-align: center;
   color: black;
-  background-color: aqua;
+  background-color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
@@ -43,6 +45,17 @@ p {
   background-attachment: scroll;
   background-attachment: fixed;
   max-width: 500px;
+}
+
+nav {
+  background-color: white;
+  border: 10px;
+  border-radius: 5px;
+  border-color: aquamarine;
+}
+
+/* .links {
+
 }
 /* img {
   width: 20%;
