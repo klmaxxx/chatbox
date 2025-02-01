@@ -1,0 +1,28 @@
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 72px;
+  border: 6px;
+  border-color: black;
+  border-radius: 3px;
+}
+
+a {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 42px;
+  color: black;
+  border: 6px;
+  border-color: black;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.blogel1 {
+  border: 6px inset black;
+  border-radius: 3px;
+  size: 36px;
+}
+
+nav {
+  border: 10px inset black;
+  border-radius: 6px;
+}
