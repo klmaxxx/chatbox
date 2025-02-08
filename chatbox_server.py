@@ -11,44 +11,47 @@ app = Flask(__name__)
 app.config["SECRET_KEY"] = "14885269yateshakalitkurazebu"
 
 
-def user_info():
-    user_info = {"username": "", "password": "", "email": ""}
-    if request.method == "POST":
-        user_info = {
-            "username": request.form.get("username1"),
-            "password": request.form.get("password1"),
-            "email": request.form.get("email1"),
-        }
-        fill_info(user_info["username"], user_info["email"], user_info["password"])
-        return redirect(url_for("mainblog"))
+# def user_info():
+#     user_info = {"username": "", "password": "", "email": ""}
+#     if request.method == "POST":
+#         user_info = {
+#             "username": request.form.get("username1"),
+#             "password": request.form.get("password1"),
+#             "email": request.form.get("email1"),
+#         }
+#         fill_info(user_info["username"], user_info["email"], user_info["password"])
+#         return redirect(url_for("mainblog"))
 
 
-def log_in():
-    if request.method == "POST":
-        return redirect(url_for("mainblog"))
-
-
-def get_post_blog():
-    if request.method == "POST":
-        user_post_text = request.form.get("blog1")
-        user_post_file = request.form.get("file1")
-    return redirect(url_for("mainblog"))       
+# def log_in():
+#     if request.method == "POST":
+#         return redirect(url_for("mainblog"))
+   
 
 def main_page():
     return render_template("chatbox_main.html")
 
 
 def signup():
-    return render_template("chatbox_signup.html"), user_info()
+    if request.method == "POST":
+        fill_info(request.form.get("username1"), request.form.get("email1"), request.form.get("password1"))
+        return redirect(url_for("mainblog"))
+    else:
+        return render_template("chatbox_signup.html")
 
 
 def signin():
-    return render_template("chatbox_signin.html"), log_in()
+    if request.method == "POST":
+        return redirect(url_for("mainblog"))
+    else:
+        return render_template("chatbox_signin.html")
 
 
 def main_blog():
-    return render_template("chatbox_mainblog.html"), get_post_blog()
-
+    if request.method == "POST":
+        user_post_text = request.form.get("blog1")
+        user_post_file = request.form.get("file1")
+    return render_template("chatbox_mainblog.html")
 
 # app.route("/")
 # app.route("/save_data", methods=["POST"])
