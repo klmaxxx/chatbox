@@ -7,14 +7,17 @@
   </head>
 
   <body>
+  <div class="navigation">
     <nav>
       <h1>
-        <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> chatbox
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        {# <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> #}
+         chatbox
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         <a href="{{url_for('signup')}}"> Sign up</a>
-        &nbsp&nbsp&nbsp<a href="{{url_for('signin')}}"> Sign in</a>
+        <a href="{{url_for('signin')}}"> Sign in</a>
       </h1>
     </nav>
+    </div>
     <div class="main">
       <div class="hello">
         <p>Hello! Welcome to <b>chatbox</b>.</p>

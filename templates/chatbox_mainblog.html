@@ -8,24 +8,25 @@
   <body>
     <nav>
       <h1>
-        <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> chatbox
-        &nbsp&nbsp&nbsp&nbsp<a href="{{url_for('mainblog')}}">Main Blog</a> <a href="">Friends</a>
-        <a href=""> Friend requests</a>
+        {# <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> #} chatbox &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp<a href="{{url_for('mainblog')}}">Main Blog</a>&nbsp&nbsp
+        <a href="{{url_for('friends_page')}}">Friends</a>&nbsp&nbsp
+        <a href="{{url_for('friends_page')}}"> Friend requests</a>
       </h1>
     </nav>
-    <div class="blogel1">
-    <form method="post" action="mainblog">
-      <textarea name="blog1" placeholder="Tell your thoughts..."></textarea>
-    </div>
-    <br />
-    <input type="file" name="file1" />
-    <br />
-    <br />
-    <input type="submit" name="submit2" value="Post" />
+    <form method="post" action="main_blog">
+      <div class="blogel1">
+        <textarea name="blog1" placeholder="Tell your thoughts..."></textarea>
+      </div>
+      <br />
+      <input type="file" name="file1" />
+      <br />
+      <br />
+      <input type="submit" name="submit2" value="Post" />
     </form>
-    {%if get_post_blog%}
-    <p>{{user_post_file}}</p>
-    <p>{{user_post_text}}</p>
-    {%endif%}
+    {# {%for blog in blogs%} #} {%if request.form.get("blog1")%}
+    <p>{{request.form.get("blog1")}}</p>
+    {%endif%} {# {%endfor%} #}
+    <p><img src="{{request.form.get('file1')}}" /></p>
   </body>
 </html>
