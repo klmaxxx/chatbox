@@ -8,9 +8,10 @@
   <body>
     <nav>
       <h1>
-        {# <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> #} chatbox &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-        &nbsp&nbsp&nbsp&nbsp<a href="{{url_for('mainblog')}}">Main Blog</a>&nbsp&nbsp
-        <a href="{{url_for('friends_page')}}">Friends</a>&nbsp&nbsp
+        {# <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> #} chatbox
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp<a href="{{url_for('mainblog')}}"
+          >Main Blog</a
+        >&nbsp&nbsp <a href="{{url_for('friends_page')}}">Friends</a>&nbsp&nbsp
         <a href="{{url_for('friends_page')}}"> Friend requests</a>
       </h1>
     </nav>
@@ -24,9 +25,13 @@
       <br />
       <input type="submit" name="submit2" value="Post" />
     </form>
-    {# {%for blog in blogs%} #} {%if request.form.get("blog1")%}
-    <p>{{request.form.get("blog1")}}</p>
-    {%endif%} {# {%endfor%} #}
-    <p><img src="{{request.form.get('file1')}}" /></p>
+    <div class="blogel2">
+      {%if request.form.get("blog1")%}
+      <p>{{request.form.get("blog1")}}</p>
+      <br />
+      {%endif%} {%if request.form.file1%}
+      <p><img src="{{request.form.get('file1')}}" /></p>
+      {%endif%}
+    </div>
   </body>
 </html>

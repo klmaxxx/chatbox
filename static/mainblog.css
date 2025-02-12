@@ -26,3 +26,9 @@ nav {
   border: 10px inset black;
   border-radius: 6px;
 }
+
+.blog_1 {
+  border: 6px inset black;
+  border-radius: 3px;
+  font-size: 16px;
+}

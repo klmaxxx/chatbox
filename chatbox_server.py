@@ -4,6 +4,8 @@ from flask import Flask, redirect, render_template, request, url_for
 
 from chatbox_userdata import fill_info, check_info
 
+from chatbox_blogs import fill_blogs
+
 logging.basicConfig(level=logging.DEBUG)
 
 # import sqlite3
@@ -58,10 +60,11 @@ def signin():
 
 def main_blog():
     if request.method == "POST":
-        user_post_text = request.form.get("blog1")
         user_post_file = request.form.get("file1")
+        fill_blogs(request.form.get("blog1"))
         return render_template("chatbox_mainblog.html")
     return render_template("chatbox_mainblog.html")
+
 
 def friends_page():
     return render_template('friend-page.html')
