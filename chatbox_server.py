@@ -53,7 +53,7 @@ def signup():
 
 def signin():
     if request.method == "POST":
-        check_info(request.form.get("email2"), request.form.get("password2"), redirect(url_for("mainblog")), render_template("chatbox_signin.html"))
+        check_info(request.form.get("email2"), request.form.get("password2"))
     else:
         return render_template("chatbox_signin.html")
 
