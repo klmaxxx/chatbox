@@ -25,3 +25,8 @@ body {
   margin-left: 400px;
   margin-top: 50px;
 }
+
+.error {
+  background-color: rgba(255, 0, 0, 0.261);
+  color: red;
+}

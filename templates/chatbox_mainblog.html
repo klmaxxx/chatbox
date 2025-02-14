@@ -20,18 +20,17 @@
         <textarea name="blog1" placeholder="Tell your thoughts..."></textarea>
       </div>
       <br />
-      <input type="file" name="file1" />
+      {# <input type="file" name="file1" />
       <br />
-      <br />
+      <br /> #}
       <input type="submit" name="submit2" value="Post" />
     </form>
     <div class="blogel2">
       {%if request.form.get("blog1")%}
       <p>{{request.form.get("blog1")}}</p>
-      <br />
-      {%endif%} {%if request.form.file1%}
+      {%endif%} {# {%if request.form.file1%}
       <p><img src="{{request.form.get('file1')}}" /></p>
-      {%endif%}
+      {%endif%} #}
     </div>
   </body>
 </html>

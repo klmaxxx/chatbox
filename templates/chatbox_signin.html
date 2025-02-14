@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sign in</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='chatbox_signup.css')}}" />
-  </head>
 
-  <body>
-    <form method="post" action="main_blog">
-      <script>
-        function toggle() {
-          var elements = document.getElementsByClassName("ppp");
-          for (var i = 0; i < elements.length; i++) {
-            elements[i].type = elements[i].type === "password" ? "text" : "password";
-          }
+<head>
+  <title>Sign in</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='chatbox_signup.css')}}" />
+</head>
+
+<body>
+  <form method="post" action="signin">
+    <script>
+      function toggle() {
+        var elements = document.getElementsByClassName("ppp");
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].type = elements[i].type === "password" ? "text" : "password";
         }
-      </script>
-      <div class="frame">
+      }
+    </script>
+    <div class="frame">
       <h1>Sign in</h1>
+      <p class="error">{{error}}</p>
+      <p><input type="text" name="username" placeholder="Username" /></p>
 
-      <p><input type="text" name="email2" placeholder="Username" /></p>
-
-      <p><input type="password" name="password2" placeholder="Password" class="ppp" /></p>
+      <p><input type="password" name="password" placeholder="Password" class="ppp" /></p>
 
       <p>
-        <input type="checkbox" name="showpassword2" value="Show password" onclick="toggle()" /> Show
+        <input type="checkbox" name="show_password" value="Show password" onclick="toggle()" /> Show
         password
       </p>
-      <p><input type="submit" name="Sign_in1" value="Sign in" /></p>
+      <p><input type="submit" name="Sign_in" value="Sign in" /></p>
       {%if submit%} {{url_for('main_page')}} {%endif%}
-      </div>
-    </form>
-  </body>
+    </div>
+  </form>
+</body>
+
 </html>

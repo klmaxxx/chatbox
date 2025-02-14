@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="{{url_for('static', filename='chatbox_main.css')}}" />
-    <meta charset="UTF-8" />
-    <title>chatbox main page</title>
-  </head>
 
-  <body>
+<head>
+  <link rel="stylesheet" href="{{url_for('static', filename='chatbox_main.css')}}" />
+  <meta charset="UTF-8" />
+  <title>chatbox main page</title>
+</head>
+
+<body>
   <div class="navigation">
     <nav>
       <h1>
         {# <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> #}
-         chatbox
+        chatbox
         &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        {%if "username" not in session%}
         <a href="{{url_for('signup')}}"> Sign up</a>
         <a href="{{url_for('signin')}}"> Sign in</a>
+        {% else %}
+        <a>{{session["username"]}}</a>
+        <a href="{{url_for('logout')}}">Logout</a>
+        {% endif %}
       </h1>
     </nav>
-    </div>
-    <div class="main">
-      <div class="hello">
-        <p>Hello! Welcome to <b>chatbox</b>.</p>
+  </div>
+  <div class="main">
+    <div class="hello">
+      <p>Hello! Welcome to <b>chatbox</b>.</p>
 
-        <p>Here you can chat with your friends,</p>
-        <p>make posts on your own page</p>
-        <p>and of course, have some fun.</p>
+      <p>Here you can chat with your friends,</p>
+      <p>make posts on your own page</p>
+      <p>and of course, have some fun.</p>
 
-        <p>Good luck!</p>
-      </div>
+      <p>Good luck!</p>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

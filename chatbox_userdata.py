@@ -28,13 +28,25 @@ def fill_info(username: str, email: str, password: str):
     )
     print(*execute("SELECT * FROM user_info"), sep="\n", flush=True)
 
-def check_info(username, password, redirect, error):
-    cursor = conn.cursor()
-    execute("SELECT username FROM user_info")
-    result1 = cursor.fetchall() 
-    execute("SELECT password FROM user_info")
-    result2 = cursor.fetchall()
-    if username in result1 and password in result2:
-        return redirect
-    else:
-        return error
+
+def valid_user(username, password):
+    return bool(
+        execute(
+            "SELECT ROWID, * FROM user_info WHERE username == ? AND password == ? LIMIT 1",
+            [username, password],
+        )
+    )
+
+
+def user_exists(name, email):
+    return bool(
+        execute("SELECT * FROM user_info WHERE username == ? OR email == ? LIMIT 1", [name, email])
+    )
+
+
+def get_all_users():
+    return execute("SELECT ROWID, * FROM user_info")
+
+
+def get_user(name):
+    return execute("SELECT ROWID, * FROM user_info WHERE username == ? LIMIT 1", [name])[0]

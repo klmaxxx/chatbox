@@ -1,4 +1,4 @@
 {
+  "files.associations": { "*.html": "jinja-html" },
   "python.analysis.typeCheckingMode": "standard"
-  // "files.associations": { "html*.extension": "jinja-html" }
 }
