@@ -17,7 +17,7 @@
       </h1>
     </nav>
     {%if "username" not in session%}
-    <p>Зареєструйтесь щоб бачити контент!</p>
+    <p>Sign up or sign in to view content on this page!</p>
     {%else%}
     <form method="post" action="main_blog">
       <div class="blogel1">
@@ -33,7 +33,7 @@
     </form>
     <div class="blogel2">
       {% for username, text in posts%}
-      <p style="border 6px inset black">{{username}}<br />{{text}}</p>
+      <p>{{username}}<br />{{text}}</p>
       {%endfor%} {% if session["page"] > 1 %}
       <a href="{{url_for('prev_page')}}"> ◀️ </a>
       {%endif%} {{session["page"]}}
