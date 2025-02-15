@@ -18,7 +18,8 @@
     </script>
     <div class="frame">
       <h1>Sign in</h1>
-      <p class="error">{{error}}</p>
+      {%if error%}<p class="error">{{error}}</p>{%endif%}
+
       <p><input type="text" name="username" placeholder="Username" /></p>
 
       <p><input type="password" name="password" placeholder="Password" class="ppp" /></p>

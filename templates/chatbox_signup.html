@@ -18,7 +18,8 @@
     </script>
     <div class="frame">
       <h1>Sign up</h1>
-      <p class="error">{{error}}</p>
+      {%if error%}<p class="error">{{error}}</p>{%endif%}
+
       <p><input type="text" name="username" placeholder="Create your username" /></p>
 
       <p><input type="email" name="email" placeholder="E-mail" /></p>

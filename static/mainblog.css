@@ -32,3 +32,17 @@ nav {
   border-radius: 3px;
   font-size: 16px;
 }
+
+.blogel2 {
+  border: 6px inset black;
+  border-radius: 3px;
+}
+
+p {
+  border: 6px inset black;
+  border-radius: 3px;
+  margin-left: 5px;
+  font-family: Calibri;
+  font-size: 14px;
+}
+

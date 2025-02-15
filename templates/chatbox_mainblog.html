@@ -5,32 +5,40 @@
     <link rel="stylesheet" href="{{url_for('static', filename='mainblog.css')}}" />
     <title>User Page</title>
   </head>
+
   <body>
     <nav>
       <h1>
-        {# <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> #} chatbox
-        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp<a href="{{url_for('mainblog')}}"
-          >Main Blog</a
-        >&nbsp&nbsp <a href="{{url_for('friends_page')}}">Friends</a>&nbsp&nbsp
+        {# <img src="{{url_for('static', filename='chatbox_icon.png')}}" /> #}
+        <a href="{{url_for('main_page')}}">chatbox</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        &nbsp&nbsp&nbsp&nbsp<a href="{{url_for('mainblog')}}">Main Blog</a>&nbsp&nbsp
+        <a href="{{url_for('friends_page')}}">Friends</a>&nbsp&nbsp
         <a href="{{url_for('friends_page')}}"> Friend requests</a>
       </h1>
     </nav>
+    {%if "username" not in session%}
+    <p>Зареєструйтесь щоб бачити контент!</p>
+    {%else%}
     <form method="post" action="main_blog">
       <div class="blogel1">
-        <textarea name="blog1" placeholder="Tell your thoughts..."></textarea>
+        <textarea name="text" placeholder="Tell your thoughts..."></textarea> <br />
+        <input type="submit" name="submit" value="Post" />
       </div>
+      {# <input type="file" name="file" />
       <br />
-      {# <input type="file" name="file1" />
       <br />
-      <br /> #}
-      <input type="submit" name="submit2" value="Post" />
+      #} {%if error%}
+      <p class="error">{{error}}</p>
+      {%endif%}
     </form>
     <div class="blogel2">
-      {%if request.form.get("blog1")%}
-      <p>{{request.form.get("blog1")}}</p>
-      {%endif%} {# {%if request.form.file1%}
-      <p><img src="{{request.form.get('file1')}}" /></p>
-      {%endif%} #}
+      {% for username, text in posts%}
+      <p style="border 6px inset black">{{username}}<br />{{text}}</p>
+      {%endfor%} {% if session["page"] > 1 %}
+      <a href="{{url_for('prev_page')}}"> ◀️ </a>
+      {%endif%} {{session["page"]}}
+      <a href="{{url_for('next_page')}}"> ▶️ </a>
     </div>
+    {%endif%}
   </body>
 </html>

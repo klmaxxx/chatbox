@@ -19,6 +19,7 @@
         <a href="{{url_for('signin')}}"> Sign in</a>
         {% else %}
         <a>{{session["username"]}}</a>
+        <a href="{{url_for('mainblog')}}">Main blog</a>
         <a href="{{url_for('logout')}}">Logout</a>
         {% endif %}
       </h1>
@@ -28,8 +29,7 @@
     <div class="hello">
       <p>Hello! Welcome to <b>chatbox</b>.</p>
 
-      <p>Here you can chat with your friends,</p>
-      <p>make posts on your own page</p>
+      <p>Here you can chat with your friends in real time,</p>  
       <p>and of course, have some fun.</p>
 
       <p>Good luck!</p>
